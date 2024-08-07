@@ -17,8 +17,7 @@ class _VideoItemState extends State<VideoItem> {
   @override
   void initState() {
     super.initState();
-    // ignore: deprecated_member_use
-    _controller = VideoPlayerController.network(widget.videoUrl)
+    _controller = VideoPlayerController.networkUrl(Uri.parse(widget.videoUrl))
       ..initialize().then((_) {
         if (widget.isPlaying) {
           _controller.play();
